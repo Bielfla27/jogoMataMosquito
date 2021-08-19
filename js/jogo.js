@@ -16,8 +16,6 @@ if(nivel === 'normal'){
     tempoCriaMosquito = 700
 }
 
-
-
 function ajustaTamanho(){
     altura = window.innerHeight
     largura = window.innerWidth
