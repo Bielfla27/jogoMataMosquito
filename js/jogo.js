@@ -1,14 +1,25 @@
 var altura =  0
 var largura = 0
 var vidas = 1
+var tempo = 10
 
 function ajustaTamanho(){
     altura = window.innerHeight
     largura = window.innerWidth
     console.log(largura,altura )
 }
-
 ajustaTamanho()
+
+var cronometro = setInterval(function () {
+    tempo-= 1
+    if(tempo < 0){
+        clearInterval(cronometro)
+        clearInterval(criaMosquito)
+        alert("vitória")
+    }else{
+        document.getElementById('cronometro').innerHTML = tempo
+    }
+    } , 2000)
 
 function posicaoRandomica(){
 
