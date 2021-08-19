@@ -1,7 +1,11 @@
-html{
-    cursor: url(../imagens/mata_mosca.png) 30 30 ,auto;
+html{  
+      cursor: url(../imagens/mata_mosca.png) 30 30 ,auto;
 }
 
+html,body{
+    padding: 0%;
+    height: 0%;
+}
 
 body{
     background-image: url(../imagens/bg.jpg);
