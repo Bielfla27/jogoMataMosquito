@@ -79,3 +79,15 @@ function ladoAleatorio(){
        return 'ladoB'
      }
 }
+
+
+function iniciarJogo(){
+    nivel = document.getElementById("nivel").value
+
+    if(nivel === ''){
+        alert("Selecione um nivel primeiro")
+        return false
+    }
+
+    alert(nivel)
+}
