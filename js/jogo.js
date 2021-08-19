@@ -1,5 +1,6 @@
 var altura =  0
 var largura = 0
+var vidas = 1
 
 function ajustaTamanho(){
     altura = window.innerHeight
@@ -14,6 +15,12 @@ function posicaoRandomica(){
     //remover o mosquito anterior caso exista
     if(document.getElementById('mosquito')){
         document.getElementById('mosquito').remove()
+        if(vidas > 3){
+            alert("interromper o jogo")
+        }else{
+            document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png"
+            vidas++
+        }
     }
 
     var posicaoX = Math.floor(Math.random() * largura) - 90
@@ -33,6 +40,9 @@ function posicaoRandomica(){
     mosquito.style.top = posicaoY + 'px' //colocando o mosquito nessa posicao
     mosquito.style.position = 'absolute' //mosquito tem que ser absolute
     mosquito.id = 'mosquito' //definindo um id 
+    mosquito.onclick = function(){
+        this.remove()
+    }
     document.body.appendChild(mosquito) //estou colocando o mosquito no body
 }
 
