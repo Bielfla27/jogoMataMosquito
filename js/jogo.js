@@ -1,7 +1,22 @@
 var altura =  0
 var largura = 0
 var vidas = 1
-var tempo = 10
+var tempo = 15
+var tempoCriaMosquito = 2000
+
+var nivel = window.location.search //só pega o texto depois do ?
+nivel = nivel.replace('?' , '')//tirand a ? da srintg nivel
+
+
+if(nivel === 'normal'){
+    tempoCriaMosquito = 2000
+}else if(nivel === 'dificil'){
+    tempoCriaMosquito = 1000
+}else if(nivel === 'impossivel'){
+    tempoCriaMosquito = 700
+}
+
+
 
 function ajustaTamanho(){
     altura = window.innerHeight
@@ -89,5 +104,7 @@ function iniciarJogo(){
         return false
     }
 
-    alert(nivel)
+    window.location.href = 'app.html?' + nivel //passando o endereço com parametro
+
+  
 }
